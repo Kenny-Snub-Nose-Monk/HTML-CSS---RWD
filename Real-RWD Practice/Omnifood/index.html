@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- without tthis line of code,  RWD will actually not work on physical mobile devices  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css">
 
     <script
       type="module"
@@ -50,6 +52,11 @@
             </li>
           </ul>
         </nav>
+
+        <button class="btn-mobile-nav">
+          <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+          <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+        </button>
       </div>
     </header>
 
@@ -309,7 +316,7 @@
 
       </div>
 
-      <div class="testimonials-gallery grid--3-cols">
+      <div class="testimonials-gallery">
         <figure class="gallery-item">
           <img
             src="img/gallery/gallery-1.jpg"
@@ -578,7 +585,7 @@
         <ul class="social-links">
           <li>
             <a class="footer-link" href="#"
-              ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ><ion-icon class="social-icon" name="logo-instagram"></ion-icon 
             ></a>
           </li>
           <li>
