@@ -5,12 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- without tthis line of code,  RWD will actually not work on physical mobile devices  -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link rel="icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Rubik:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/query.css">
@@ -25,6 +31,8 @@
     ></script>
 
 
+
+
     <title>Omnifood</title>
   </head>
   <body>
@@ -36,19 +44,19 @@
         <nav>
           <ul class="nav list-style-none">
             <li class="nav-item">
-              <a href="#" class="btn link-style-none">How it works</a>
+              <a href="#how" class="btn link-style-none main-nav-link">How it works</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn link-style-none">Meals</a>
+              <a href="#meals" class="btn link-style-none main-nav-link">Meals</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn link-style-none">Testimonials</a>
+              <a href="#testimonials" class="btn link-style-none main-nav-link">Testimonials</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn link-style-none">Pricing</a>
+              <a href="#pricing" class="btn link-style-none main-nav-link">Pricing</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="btn-orange btn-style">Try for free</a>
+              <a href="#cta" class="btn-orange btn-style main-nav-link">Try for free</a>
             </li>
           </ul>
         </nav>
@@ -72,10 +80,10 @@
             needs.
           </p>
           <div class="hero-button-box">
-            <a href="#" class="btn-orange btn-style link-style-none"
+            <a href="#cta" class="btn-orange btn-style link-style-none"
               >Start eating well</a
             >
-            <a href="#" class="btn-skin btn-style link-style-none"
+            <a href="#how" class="btn-skin btn-style link-style-none"
               >Learn more &darr;</a
             >
           </div>
@@ -94,8 +102,19 @@
             >
           </div>
         </div>
+
+
         <div class="hero-img-box">
-          <img src="./img/hero.png" alt="hero-img" />
+          <picture>
+            <source srcset="img/hero.webp" type="image/webp" />
+            <source srcset="img/hero-min.png" type="image/png" />
+
+            <img
+              src="img/hero-min.png"
+              class="hero-img"
+              alt="Woman enjoying food, meals in storage container, and food bowls on a table"
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -113,7 +132,7 @@
       </div>
     </section>
 
-    <section class="section-how">
+    <section class="section-how" id="how">
       <div class="container">
         <p class="sub-title">How it works</p>
         <h2 class="heading-secondary">
@@ -170,7 +189,7 @@
       </div>
     </section>
 
-    <section class="meals-section">
+    <section class="meals-section" id="meals">
       <div class="meals container">
         <div class="meals-header">
           <p class="sub-title">Meals</p>
@@ -278,7 +297,7 @@
     </div>
     </section>
 
-    <section class="testimonials-section grid ">
+    <section class="testimonials-section grid " id="testimonials">
       <div class="testimonials-text-box">
         <div class="sub-title">Testimonials</div>
         <h2 class="heading-secondary">Once you try it, you can't go back</h2>
@@ -405,7 +424,7 @@
       </div>
     </section>
 
-    <section class="section-pricing">
+    <section class="section-pricing" id="pricing">
       <div class="container">
         <div class="pricing-header">
           <div class="sub-title">Pricing</div>
@@ -515,7 +534,7 @@
         </div>
     </section>
 
-    <section class="section-cta">
+    <section class="section-cta" id="cta">
       <div class="container">
         <div class="cta">
           <div class="cta-text-box">
@@ -526,13 +545,14 @@
               first meal is on us!
             </p>
 
-            <form class="cta-form" action="#">
+            <form class="cta-form" name="sign-up" netlify>
               <div>
                 <label for="full-name">Full Name</label>
                 <input
                   id="full-name"
                   type="text"
                   placeholder="John Smith"
+                  name="full-name"
                   required
                 />
               </div>
@@ -543,13 +563,14 @@
                   id="email"
                   type="email"
                   placeholder="me@example.com"
+                  name="email"
                   required
                 />
               </div>
 
               <div>
                 <label for="select-where">Where did you hear from us?</label>
-                <select id="select-where" required>
+                <select id="select-where" name="select-where" required>
                   <option value="">Please choose one option:</option>
                   <option value="friends">Friends and family</option>
                   <option value="youtube">YouTube video</option>
@@ -650,5 +671,6 @@
     </div>
   </footer>
 
+    <script defer src="js/script.js"></script>
   </body>
 </html>
